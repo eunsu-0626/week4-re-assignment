@@ -9,6 +9,7 @@
 SceneID scene1;
 ObjectID puzzle_board[6], init_puzzle[6];
 ObjectID startbutton;
+ObjectID hint, hintpicture;
 
 const char* puzzle_image[6] = {
 	"1_1.png",
@@ -137,6 +138,14 @@ int main()
 	showObject(startbutton);
 
 	timer = createTimer(1.f);
+
+	hint = createObject("hint.png");
+	locateObject(hint, scene1, 670, 668);
+	showObject(hint);
+
+	hintpicture = createObject("hintpicture.png");
+	locateObject(hintpicture, scene1, 835, 680);
+	hideObject(hintpicture);
 	
 	startGame(scene1);
 
